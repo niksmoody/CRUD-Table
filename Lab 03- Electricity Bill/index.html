@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill Generator</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="p1">
+            Calculate your Electricity Bill here
+        </div>
+
+        <div class="p2">
+            <p>Enter the units consumed:</p>
+            <input type="number">
+        </div>
+    </div>   
+    
+    <?php
+        $units = 200;
+        $total_bill = 0;
+
+        if($units <= 50) {
+            $total_bill = $units * 3.50;
+        } 
+        
+        elseif($units <= 150) {
+            $total_bill = 50 * 3.50 + ($units - 50) * 4.00;
+        } 
+        
+        elseif($units <= 250) {
+            $total_bill = 50 * 3.50 + 100 * 4.00 + ($units - 150) * 5.20;
+        } 
+        
+        else {
+            $total_bill = 50 * 3.50 + 100 * 4.00 + 100 * 5.20 + ($units - 250) * 6.50;
+        }
+
+        echo "Your total electricity bill is: Rs. " . number_format((float)$total_bill, 2, '.', '');
+    ?>
+</body>
+</html>

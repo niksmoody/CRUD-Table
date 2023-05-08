@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 05</title>
+</head>
+<body>
+    <h2>JavaScript Arrays</h2>
+
+    <p> <ul>
+        <li>Reversing Elements of an Array</li><br>
+        <li>Sorting Methods in Array</li><br>
+        <li>Searching Methods in Array</li><br>
+    </ul> </p>
+
+    <p id="demo"></p>
+
+    <script>
+        // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        // document.getElementById("demo").innerHTML = fruits.reverse();
+
+        function reverse(array){
+            var output = [];
+            while (array.length){
+                output.push(array.pop());
+            }
+
+            return output;
+        }
+
+        console.log(reverse(["Happy", "Birthday", "to", "You"]));
+
+        // Creating the bblSort function
+        function bubbleSort(arr){
+            for(var i=0; i<arr.length; i++){ 
+                for(var j=0; j<( arr.length-i-1); j++){
+                    if(arr[j] > arr[j+1]){
+                        var temp = arr[j]
+                        arr[j] = arr[j + 1]
+                        arr[j+1] = temp
+                    }
+                }
+            }
+
+            console.log(arr);
+        }
+    </script>
+</body>
+</html>
